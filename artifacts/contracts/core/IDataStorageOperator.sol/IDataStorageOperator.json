@@ -1,0 +1,293 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IDataStorageOperator",
+  "sourceName": "contracts/core/IDataStorageOperator.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "alpha1",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "alpha2",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint32",
+              "name": "beta1",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "beta2",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint16",
+              "name": "gamma1",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "gamma2",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "baseFee",
+              "type": "uint16"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct AlgebraFeeConfiguration",
+          "name": "feeConfig",
+          "type": "tuple"
+        }
+      ],
+      "name": "FeeConfiguration",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint16",
+              "name": "alpha1",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "alpha2",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint32",
+              "name": "beta1",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "beta2",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint16",
+              "name": "gamma1",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "gamma2",
+              "type": "uint16"
+            },
+            {
+              "internalType": "uint16",
+              "name": "baseFee",
+              "type": "uint16"
+            }
+          ],
+          "internalType": "struct AlgebraFeeConfiguration",
+          "name": "feeConfig",
+          "type": "tuple"
+        }
+      ],
+      "name": "changeFeeConfiguration",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "time",
+          "type": "uint32"
+        },
+        {
+          "internalType": "uint32",
+          "name": "secondsAgo",
+          "type": "uint32"
+        },
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint16",
+          "name": "index",
+          "type": "uint16"
+        }
+      ],
+      "name": "getSingleTimepoint",
+      "outputs": [
+        {
+          "internalType": "int56",
+          "name": "tickCumulative",
+          "type": "int56"
+        },
+        {
+          "internalType": "uint112",
+          "name": "volatilityCumulative",
+          "type": "uint112"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "secondsAgos",
+          "type": "uint32[]"
+        }
+      ],
+      "name": "getTimepoints",
+      "outputs": [
+        {
+          "internalType": "int56[]",
+          "name": "tickCumulatives",
+          "type": "int56[]"
+        },
+        {
+          "internalType": "uint112[]",
+          "name": "volatilityCumulatives",
+          "type": "uint112[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "time",
+          "type": "uint32"
+        },
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "startIndex",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "amount",
+          "type": "uint16"
+        }
+      ],
+      "name": "prepayTimepointsStorageSlots",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "timepoints",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "initialized",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint32",
+          "name": "blockTimestamp",
+          "type": "uint32"
+        },
+        {
+          "internalType": "int56",
+          "name": "tickCumulative",
+          "type": "int56"
+        },
+        {
+          "internalType": "uint88",
+          "name": "volatilityCumulative",
+          "type": "uint88"
+        },
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        },
+        {
+          "internalType": "int24",
+          "name": "averageTick",
+          "type": "int24"
+        },
+        {
+          "internalType": "uint16",
+          "name": "windowStartIndex",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "index",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint32",
+          "name": "blockTimestamp",
+          "type": "uint32"
+        },
+        {
+          "internalType": "int24",
+          "name": "tick",
+          "type": "int24"
+        }
+      ],
+      "name": "write",
+      "outputs": [
+        {
+          "internalType": "uint16",
+          "name": "indexUpdated",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint16",
+          "name": "newFee",
+          "type": "uint16"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
